@@ -23,3 +23,6 @@ Executes the first 5 steps in the clustering pipeline:
 7. 6_cluster_of_clusters.R: Clustering all loess fits for each group of mice to see their dynamic similarity
 
 8. 7_cluster_similarity.R : Use this R code to compute the pairwise overlap between clusters for each group of mice and check their significance with z-score simulation.
+
+
+######some of the plots were removed dues to high size####
