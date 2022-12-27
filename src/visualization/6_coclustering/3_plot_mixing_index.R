@@ -11,13 +11,14 @@ library(plyr)
 library(ggbeeswarm)
 
 #####load all the stat data####
-mydir = "reports_article/figures/mixing_index/stat_csv/"
-myfiles = list.files(path=mydir, pattern="*stat.tsv", full.names=TRUE)
-df_stat_all = ldply(myfiles, read_tsv)
-detach("package:plyr")
+#mydir = "reports/figures/mixing_index/stat_csv/"
+#myfiles = list.files(path=mydir, pattern="*stat.tsv", full.names=TRUE)
+#df_stat_all = ldply(myfiles, read_tsv)
+#detach("package:plyr")
 
-
+###the file tales too long load so I already saved them as a csv to use it
 #saveRDS(df_stat_all,"reports/figures/mixing_index/stat_vall_stat_new.csv")
+df_stat_all=readRDS("reports/figures/mixing_index/stat_vall_stat_new.csv")
 
 df_rm=df_stat_all[df_stat_all$Condition %in% c("rm_rm","nc_rm","rm_gf","nc_gf"),]
 df_rm=df_rm  %>% mutate(Condition=case_when(Condition =="rm_rm" ~ "1",
@@ -48,7 +49,7 @@ p=ggplot() +geom_violin(data=df,aes(x=Condition, y=1-ks_stat,color=Condition)) +
                                 "6"="#6B298C") ,
                      guide="none") +
   ylab("Mixing Index") + xlab("") +
-  geom_quasirandom(data=k,aes(x=Condition, y=1-ks_stat,color=Condition),size=0.2) +
+  geom_quasirandom(data=df,aes(x=Condition, y=1-ks_stat,color=Condition),size=0.2) +
   ylab("Mixing Index") + xlab("")+
   theme(axis.title.x=element_blank(),
         axis.ticks.x=element_blank()) +

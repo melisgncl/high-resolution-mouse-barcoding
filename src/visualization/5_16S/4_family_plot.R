@@ -65,7 +65,7 @@ effective.limits = limits.hash[[type]]
 
 
 
-rm1.family.plot = linearLinePlot(rm1_16S.family,effective.breaks,effective.labels,effective.limits,"rm1")
+rm1.family.plot = linearLinePlot(rm1_16S.family_wo13,effective.breaks,effective.labels,effective.limits,"rm1")
 rm2.family.plot = linearLinePlot(rm2_16S.family,effective.breaks,effective.labels,effective.limits,"rm2")
 rm3.family.plot = linearLinePlot(rm3_16S.family,effective.breaks,effective.labels,effective.limits,"rm3")
 rm4.family.plot = linearLinePlot(rm4_16S.family,effective.breaks,effective.labels,effective.limits,"rm4")
@@ -76,7 +76,7 @@ ggsave(effectivefamily.lineplot,filename = "reports/figures/16S/rm_line.png",fon
 
 #######################    ^^^^^^^^   #####################################
 
-rm1.family.plot = logLinePlot(rm1_16S.family,effective.breaks,effective.labels,effective.limits,"rm1")
+rm1.family.plot = logLinePlot(rm1_16S.family_wo13,effective.breaks,effective.labels,effective.limits,"rm1")
 rm2.family.plot = logLinePlot(rm2_16S.family,effective.breaks,effective.labels,effective.limits,"rm2")
 rm3.family.plot = logLinePlot(rm3_16S.family,effective.breaks,effective.labels,effective.limits,"rm3")
 rm4.family.plot = logLinePlot(rm4_16S.family,effective.breaks,effective.labels,effective.limits,"rm4")
@@ -87,7 +87,7 @@ ggsave(effectivefamily.logplot,filename = "reports/figures/16S/rm_logline.png",f
 
 #######################    ^^^^^^^^   #####################################
 
-rm1.family.plot = areaPlot(rm1_16S.family,effective.breaks,effective.labels,effective.limits,"rm1")
+rm1.family.plot = areaPlot(rm1_16S.family_wo13,effective.breaks,effective.labels,effective.limits,"rm1")
 rm2.family.plot = areaPlot(rm2_16S.family,effective.breaks,effective.labels,effective.limits,"rm2")
 rm3.family.plot = areaPlot(rm3_16S.family,effective.breaks,effective.labels,effective.limits,"rm3")
 rm4.family.plot = areaPlot(rm4_16S.family,effective.breaks,effective.labels,effective.limits,"rm4")
@@ -129,7 +129,7 @@ ggsave(effectivefamily.logplot,filename = "reports/figures/16S/im_logline.png",f
 #######################    ^^^^^^^^   #####################################
 
 im1.family.plot = areaPlot(im1_16S.family,effective.breaks,effective.labels,effective.limits,"im1")
-im2.family.plot = areaPlot(im2_16S.family,effective.breaks,effective.labels,effectivel.imits,"im2")
+im2.family.plot = areaPlot(im2_16S.family,effective.breaks,effective.labels,effective.limits,"im2")
 im3.family.plot = areaPlot(im3_16S.family,effective.breaks,effective.labels,effective.limits,"im3")
 im4.family.plot = areaPlot(im4_16S.family,effective.breaks,effective.labels,effective.limits,"im4")
 
@@ -170,7 +170,7 @@ ggsave(effectivefamily.logplot,filename = "reports/figures/16S/nc_logline.png",f
 #######################    ^^^^^^^^   #####################################
 
 nc1.family.plot = areaPlot(nc1_16S.family,effective.breaks,effective.labels,effective.limits,"nc1")
-nc2.family.plot = areaPlot(nc2_16S.family,effective.breaks,effective.labels,effectivel.ncits,"nc2")
+nc2.family.plot = areaPlot(nc2_16S.family,effective.breaks,effective.labels,effective.limits,"nc2")
 nc3.family.plot = areaPlot(nc3_16S.family,effective.breaks,effective.labels,effective.limits,"nc3")
 nc4.family.plot = areaPlot(nc4_16S.family,effective.breaks,effective.labels,effective.limits,"nc4")
 

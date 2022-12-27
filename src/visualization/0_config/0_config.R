@@ -167,7 +167,9 @@ c3="#19804F"
 eigen.colors=c('#9b2335','#0F4C81','#e15d44', '#6667AB','#aebf9a','#c5a2e8','#e1bc44',
                '#884c5e', '#218EAE', '#009B77', '#fabebe', 
                '#008080', '#e6beff', '#9a6324', '#C96115', '#800000', '#808000', '#ffd8b1', 
-               '#00756d')
+               '#00756d',"#B0BA97", "#E940E2", "#69A1AD", "#E447AD", "#84F046" ,"#ADEAA5" ,
+               "#E2ECBC", "#BC31EB", "#E29B3F" ,"#904D7E", "#C756D7" ,"#B5DFE9", "#D8537A" ,"#DE898C", "#60ABE4",
+               "#9CE2CA", "#8A764C" ,"#E582CF", "#E7BBAC", "#ABE36B")
 
 
 cluster.colors=c("#3cb44b","#4363d8","#e6194B","#e8ca00","#911eb4","#f58231","#22766dff","#42d4f4","#f032e6","#9A6324",
@@ -203,6 +205,9 @@ family.colors = c("Enterobacteriaceae" = "#003D18",
                   "Enterococcaceae" ="#a9cea8","Bacillaceae"  ="#8f7e83","Corynebacteriaceae"="#1f194d",
                   "Microbacteriaceae" ="#8bbada","Erwiniaceae"="#d4e125","Veillonellaceae"="#2a01ae","Comamonadaceae"="#b087b7","Xanthomonadaceae"="#640b66",
                   "Leptotrichiaceae"="#be6a5b","Pseudomonadaceae"="#29e2b2","Sphingomonadaceae"="#fffc78","Weeksellaceae"="#527d54")
+
+
+
 
 
 s_list=identity_list=c("Enterobacteriaceae",

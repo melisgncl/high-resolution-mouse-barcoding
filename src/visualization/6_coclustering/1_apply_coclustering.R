@@ -1,13 +1,15 @@
 ## R code
-##  Melis Gencel
+##Melis Gencel
 
 #######################    READ ME!   #####################################
 
 ###	Here we co-cluster the community dynamics(16S) with clone dynamics(E.coli lineages)
 ##to understand the  heteregenous interaction between intra and interspecies.
 
-### we used z-normalized  series remove amplitude of the dynamics so we can 
-###so we use  shape-based distance so even if te
+### we used z-normalized  series remove amplitude of the dynamics 
+#then perform hierhical  clustering  based on shape based distance 
+#as a method to efficiently group together subsequences characterized by their shape similarity 
+#despite differences in amplitude, duration and alignment(similar to k-shaped clustering)
 #######################    ^^^^^^^^   #####################################
 
 

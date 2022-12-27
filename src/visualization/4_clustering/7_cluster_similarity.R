@@ -330,36 +330,16 @@ get_overlap_graphs=function(libraries,hash,sample,cor_name){
   rownames(overlap.matrix) = colnames(mat)
   colnames(pvalue2sided) = colnames(mat)
   rownames(pvalue2sided) = colnames(mat)
-  write_csv(as.data.frame(z.matrix),file = paste0("reports/figures/overlap_of_clusters/",sample,"_z.matrix"),col_names = TRUE)
+  #write_csv(as.data.frame(z.matrix),file = paste0("reports/figures/overlap_of_clusters/",sample,"_z.matrix"),col_names = TRUE)
   write_csv(as.data.frame(overlap.matrix ),file = paste0("reports/figures/overlap_of_clusters/",sample,"_overlap_.matrix"),col_names = TRUE)
-  write_csv(as.data.frame(pvalue2sided),file = paste0("reports/figures/overlap_of_clusters/",sample,"_p_.matrix"),col_names = TRUE)
+  #write_csv(as.data.frame(pvalue2sided),file = paste0("reports/figures/overlap_of_clusters/",sample,"_p_.matrix"),col_names = TRUE)
   
   ####heatmap_plots##
-  png(paste0("reports/figures/overlap_of_clusters/",sample,"_clusters_matrix_jaccard.png"),res = 300,width = 5.5,height = 5, units="in")
-  par(mar = c(2,2,2,2))
-  heatmap.2(overlap.matrix,Rowv = dend,Colv = dend,col=overlap_palette,density.info = "none",trace = "none",
-            key.xlab="Jaccard index",cexRow = 0.5,cexCol = 0.5,colRow = col_labels, colCol = col_labels)
-  dev.off()
-  
   cairo_ps(paste0("reports/figures/overlap_of_clusters/",sample,"_clusters_matrix_jaccard.eps"),width = 5.5,height = 5)
   par(mar = c(2,2,2,2))
   heatmap.2(overlap.matrix,Rowv = dend,Colv = dend,col=overlap_palette,density.info = "none",trace = "none",
             key.xlab="Jaccard index",cexRow = 0.5,cexCol = 0.5,colRow = col_labels, colCol = col_labels)
   dev.off()
-  
-  cairo_ps(paste0("reports/figures/overlap_of_clusters/",sample,"_clusters_matrix_z.eps"),width = 5.5,height = 5)
-  par(mar = c(2,2,2,2))
-  heatmap.2(z.matrix,Rowv = dend,Colv = dend,col=z_palette,density.info = "none",trace = "none",
-            key.xlab="Z-score",cexRow = 0.5,cexCol = 0.5,colRow = col_labels, colCol = col_labels)
-  dev.off()
-  
-  
-  cairo_ps(paste0("reports/figures/overlap_of_clusters/",sample,"_clusters_matrix_p.eps"),width = 5.5,height = 5)
-  par(mar = c(2,2,2,2))
-  heatmap.2(pvalue2sided,Rowv = dend,Colv = dend,col=z_palette,density.info = "none",trace = "none",
-            key.xlab="p-value",cexRow = 0.5,cexCol = 0.5,colRow = col_labels, colCol = col_labels)
-  dev.off()
-  
   ##### overlap versus correlation and color them according to p values from z matrix
   df_z=data.frame(Var1=t(combn(colnames(z.matrix),2)),Var2=z.matrix[lower.tri(z.matrix)])
   df_z$id <- paste(df_z$Var1.1,df_z$Var1.2 ,sep="_")

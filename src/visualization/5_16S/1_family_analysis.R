@@ -73,7 +73,7 @@ nc4_16S.family = nc4_16S_abundances %>% group_by(Time,Family) %>% summarise(Abun
 
 
 
-####PLOT the diveristy and frequencies at family level##
+####PLOT the diveristy and frequencies at family level without filtering##
 source("~/Desktop/mouse_barcoding_last/src/visualization/5_16S/2_family and_species_diveristy.R")
 
 source("~/Desktop/mouse_barcoding_last/src/visualization/5_16S/4_family_plot.R")
@@ -185,12 +185,19 @@ rm2_16S.df$Time=as.integer(rm2_16S.df$Time)
 rm3_16S.df$Time=as.integer(rm3_16S.df$Time)
 rm4_16S.df$Time=as.integer(rm4_16S.df$Time)
 
+
+
+
 # cast in format suitable for co-clustering
 rm1_16S.long = reshape2::dcast(rm1_16S.df, Time ~ Family, value.var = 'Abundance.family')
 rm2_16S.long = reshape2::dcast(rm2_16S.df, Time ~ Family, value.var = 'Abundance.family')
 rm3_16S.long = reshape2::dcast(rm3_16S.df, Time ~ Family, value.var = 'Abundance.family')
 rm4_16S.long = reshape2::dcast(rm4_16S.df, Time ~ Family, value.var = 'Abundance.family')
-
+##The only 13th time point is interpolated for the sake of analysis 
+rm1_13=names(rm1_16S.long)
+rm1_13=(rm1_16S.long [12,]+rm1_16S.long[13,])/2
+rm1_16S.long=rbind(rm1_16S.long,rm1_13)
+rm1_16S.long<- rm1_16S.long[order(rm1_16S.long$Time),] 
 
 
 write_tsv(rm1_16S.long,file = "data/16S/taxa_long_format/rm1_16S_taxa.tsv",col_names = TRUE)

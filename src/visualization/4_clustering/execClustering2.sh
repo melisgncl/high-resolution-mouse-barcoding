@@ -43,7 +43,7 @@ cp $ROOTDIR/reports/figures/clustering_control/rm4/0.38/* $ROOTDIR/reports/figur
 cp $ROOTDIR/reports/figures/clustering_control/gf1/0.33/* $ROOTDIR/reports/figures/clustering/gf1/
 cp $ROOTDIR/reports/figures/clustering_control/gf2/0.39/* $ROOTDIR/reports/figures/clustering/gf2/
 cp $ROOTDIR/reports/figures/clustering_control/gf3/0.52/* $ROOTDIR/reports/figures/clustering/gf3/
-cp $ROOTDIR/reports/figures/clustering_control/gf4/0.37/* $ROOTDIR/reports/figures/clustering/gf4/
+cp $ROOTDIR/reports/figures/clustering_control/gf4/0.39/* $ROOTDIR/reports/figures/clustering/gf4/
   
 
 

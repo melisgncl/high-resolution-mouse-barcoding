@@ -138,7 +138,7 @@ runcoclustering = function(series, sample_name, nclust,cluster.series,taxa.serie
   
   ##ks distance and distance matrix that comes from dendogram
   write_tsv(as.data.frame(stat_df),paste("reports/figures/mixing_index/stat_csv/",sample_name,"_",cutoff,"_stat.tsv",sep=""),col_names=TRUE)
-  write_tsv(hc_dist, paste("reports/figures/mixing_index/stat_csv/",sample_name,"_",cutoff ,"_distance.tsv",sep=""),col_names=TRUE)
+  #write_tsv(hc_dist, paste("reports/figures/mixing_index/stat_csv/",sample_name,"_",cutoff ,"_distance.tsv",sep=""),col_names=TRUE)
   
   as.dendrogram(hc_sbd) -> dend
   
@@ -162,11 +162,11 @@ runcoclustering = function(series, sample_name, nclust,cluster.series,taxa.serie
   cluster.colors=cluster.colors[!is.na(names(cluster.colors))]
   labels_colors(dend)=cluster.colors[names(cluster.colors)][order.dendrogram(dend)]
   
-  
-  cairo_ps(paste0("reports/figures/mixing_index/",condition,"/",sample_name,"/",cutoff, "_sbd_cluster_color_dendrograms.eps"),width = 6,height = 4)
-  par(mar = c(4,2,2,8))
-  plot(dend, horiz = T,main="Distance: SBD",xlab="Height") 
-  dev.off()
+  ###plot the dendograms##
+  #cairo_ps(paste0("reports/figures/mixing_index/",condition,"/",sample_name,"/",cutoff, "_sbd_cluster_color_dendrograms.eps"),width = 6,height = 4)
+  #par(mar = c(4,2,2,8))
+  #plot(dend, horiz = T,main="Distance: SBD",xlab="Height") 
+  #dev.off()
 }
 
 

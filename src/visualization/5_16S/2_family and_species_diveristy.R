@@ -71,7 +71,12 @@ ggsave(p,filename = "reports/figures/16S/im_qinf_family_diversity.eps",fonts=c("
 im1to4.plot = ggarrange(im1to4.q0,im1to4.q1,im1to4.qinf, ncol=3, nrow=1, common.legend = TRUE, legend="bottom")
 ggsave(im1to4.plot,filename = "reports/figures/16S/im_family_diversity.eps",fonts=c("serif"),width = 15,height = 6,)
 #####################################################
-div.rm1 = calculate_diversity(format_OTU(rm1_16S.family),maxgen = 16,step = 1)
+##The only 13th time point is removed for the sake of analysis 
+rm1_16S.family_wo13=rm1_16S.family[!(rm1_16S.family$Time==13),]
+  
+
+
+div.rm1 = calculate_diversity(format_OTU(rm1_16S.family_wo13),maxgen = 16,step = 1)
 div.rm1$Generations = as.double(row.names(div.rm1))
 div.rm2 = calculate_diversity(format_OTU(rm2_16S.family),maxgen = 17,step = 1)
 div.rm2$Generations = as.double(row.names(div.rm2))

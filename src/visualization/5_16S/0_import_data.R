@@ -9,6 +9,7 @@
 ### 1. import   16S data
 
 source("~/Desktop/mouse_barcoding_last/src/visualization/0_config/0_config.R")
+library(tidyr)
 
 im1_16S_abundances <- read_csv("data/16S/formatted/im1_16S_abundances.csv")
 im2_16S_abundances <- read_csv("data/16S/formatted/im2_16S_abundances.csv")
@@ -89,6 +90,12 @@ family.colors = c("Enterobacteriaceae" = "#003D18",
                   "Enterococcaceae" ="#a9cea8","Bacillaceae"  ="#8f7e83","Corynebacteriaceae"="#1f194d",
                   "Microbacteriaceae" ="#8bbada","Erwiniaceae"="#d4e125","Veillonellaceae"="#2a01ae","Comamonadaceae"="#b087b7","Xanthomonadaceae"="#640b66",
                   "Leptotrichiaceae"="#be6a5b","Pseudomonadaceae"="#29e2b2","Sphingomonadaceae"="#fffc78","Weeksellaceae"="#527d54")
+
+####these are the families on low frequency we assign them random colors
+bottom_genera=read_csv("src/visualization/0_config/bottom_genera_color.csv")
+family_bottom=as.character(bottom_genera$hex)
+names(family_bottom)=as.character(bottom_genera$all.main.families)
+family.colors=c(family.colors,family_bottom)
 
 major.family=c("Enterobacteriaceae","Moraxellaceae","Desulfovibrionaceae","Lachnospiraceae","Ruminococcaceae",
                "Peptostreptococcaceae","Peptococcaceae","Clostridiales_vadinBB60_group",

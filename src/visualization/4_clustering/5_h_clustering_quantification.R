@@ -77,7 +77,7 @@ rm4=hc_statistic("rm4",0.38)
 gf1=hc_statistic("gf1",0.33)
 gf2=hc_statistic("gf2",0.39)
 gf3=hc_statistic("gf3",0.52)
-gf4=hc_statistic("gf4",0.37)
+gf4=hc_statistic("gf4",0.39)
 
 
 

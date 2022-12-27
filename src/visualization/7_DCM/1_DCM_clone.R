@@ -6,15 +6,15 @@
 
 #######################    ^^^^^^^^   #####################################
 
-
+source("~/Desktop/mouse_barcoding_last/src/visualization/7_DCM/DCM.R")
 #################################################gf########################################################
 #################################################gf########################################################
 #################################################gf########################################################
-
-d_gf1=get_time_derivative_gf("gf1")
-d_gf2=get_time_derivative_gf("gf2")
-d_gf3=get_time_derivative_gf("gf3")
-d_gf4=get_time_derivative_gf("gf4")
+set.seed(170)
+d_gf1=get_time_derivative_clone("gf1")
+d_gf2=get_time_derivative_clone("gf2")
+d_gf3=get_time_derivative_clone("gf3")
+d_gf4=get_time_derivative_clone("gf4")
 
 
 e_gf1=get_time_varying_eigen_values(d_gf1[[1]],d_gf1[[2]],10,"gf1",d_gf1[[3]])
@@ -47,6 +47,8 @@ gf_without_gf3=rbind(e_gf1[[2]],e_gf2[[2]],e_gf4[[2]]) %>%
   ungroup %>%  mutate(Var2=as.factor(Var2) ) %>%  na.zero() 
 get_all_umap_with_cluster_by_one_by(gf_without_gf3,"gf_without_gf3")
 
+get_chosen_umap(gf_without_gf3,36,"centroid","gf_without_gf3")
+
 ##cluster number size quantification##
 plot_umap_cluster_quantification("gf_without_gf3")
 
@@ -54,10 +56,10 @@ plot_umap_cluster_quantification("gf_without_gf3")
 #################################################rm########################################################
 #################################################rm########################################################
 
-d_clone_rm1=get_time_derivative_clones("rm1")
-d_clone_rm2=get_time_derivative_clones("rm2")
-d_clone_rm3=get_time_derivative_clones("rm3")
-d_clone_rm4=get_time_derivative_clones("rm4")
+d_clone_rm1=get_time_derivative_clone("rm1")
+d_clone_rm2=get_time_derivative_clone("rm2")
+d_clone_rm3=get_time_derivative_clone("rm3")
+d_clone_rm4=get_time_derivative_clone("rm4")
 
 
 e_clone_rm1=get_time_varying_eigen_values(d_clone_rm1[[1]],d_clone_rm1[[2]],10,"rm1",d_clone_rm1[[3]])
@@ -80,6 +82,18 @@ get_all_umap_with_cluster_by_one_by(clone_rm,"clone_rm")
 plot_umap_cluster_quantification("clone_rm")
 
 ####check all possible umap and choose the that shows all the patterns##
-get_chosen_umap(rm,65,"centroid","clone_rm")
+get_chosen_umap(clone_rm,65,"centroid","clone_rm")
 
+
+
+#########rm-clones with gf-clones######
+
+clone_rm_gf=rbind(e_clone_rm1[[2]],e_clone_rm2[[2]],e_clone_rm3[[2]],e_clone_rm4[[2]],
+                  e_gf1[[2]],e_gf2[[2]],e_gf3[[2]],e_gf4[[2]])%>%
+  ungroup %>%  mutate(Var2=as.factor(Var2) ) %>%  na.zero()
+
+
+get_all_umap_with_cluster_pairwise(clone_rm_gf,"clone_rm_gf")
+
+plot_umap_cluster_quantification("clone_rm_gf")
 

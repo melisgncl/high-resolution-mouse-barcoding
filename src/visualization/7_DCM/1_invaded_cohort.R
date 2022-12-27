@@ -6,26 +6,26 @@
 
 #######################    ^^^^^^^^   #####################################
 
-
+source("~/Desktop/mouse_barcoding_last/src/visualization/7_DCM/DCM.R")
 #################################################im########################################################
 #################################################im########################################################
 #################################################im########################################################
 
-im1_16S_taxa <- read_delim("data/16S/taxa_long_foimat/im1_16S_taxa.tsv", 
+im1_16S_taxa <- read_delim("data/16S/taxa_long_format/im1_16S_taxa.tsv", 
                            "\t", escape_double = FALSE, col_types = cols(Time = col_skip()), trim_ws = TRUE)
-im2_16S_taxa <- read_delim("data/16S/taxa_long_foimat//im2_16S_taxa.tsv", 
+im2_16S_taxa <- read_delim("data/16S/taxa_long_format//im2_16S_taxa.tsv", 
                            "\t", escape_double = FALSE, col_types = cols(Time = col_skip()), trim_ws = TRUE)
-im3_16S_taxa <- read_delim("data/16S/taxa_long_foimat//im3_16S_taxa.tsv", 
+im3_16S_taxa <- read_delim("data/16S/taxa_long_format//im3_16S_taxa.tsv", 
                            "\t", escape_double = FALSE, col_types = cols(Time = col_skip()), trim_ws = TRUE)
-im4_16S_taxa <- read_delim("data/16S/taxa_long_foimat//im4_16S_taxa.tsv", 
+im4_16S_taxa <- read_delim("data/16S/taxa_long_format//im4_16S_taxa.tsv", 
                            "\t", escape_double = FALSE, col_types = cols(Time = col_skip()), trim_ws = TRUE)
 
 
 ##calculate z dot##
-d_im1=get_time_derivative_gavaged(im1_16S_taxa,"im1")
-d_im2=get_time_derivative_gavaged(im2_16S_taxa,"im2")
-d_im3=get_time_derivative_gavaged(im3_16S_taxa,"im3")
-d_im4=get_time_derivative_gavaged(im4_16S_taxa,"im4")
+d_im1=get_time_derivative_invaded(im1_16S_taxa,"im1",0.25)
+d_im2=get_time_derivative_invaded(im2_16S_taxa,"im2",0.25)
+d_im3=get_time_derivative_invaded(im3_16S_taxa,"im3",0.25)
+d_im4=get_time_derivative_invaded(im4_16S_taxa,"im4",0.25)
 
 ##get the time evolving eigenspace ###
 
@@ -80,10 +80,10 @@ rm4_16S_taxa <- read_delim("data/16S/taxa_long_format//rm4_16S_taxa.tsv",
 
 
 ##calculate z dot##
-d_rm1=get_time_derivative_gavaged(rm1_16S_taxa,"rm1")
-d_rm2=get_time_derivative_gavaged(rm2_16S_taxa,"rm2")
-d_rm3=get_time_derivative_gavaged(rm3_16S_taxa,"rm3")
-d_rm4=get_time_derivative_gavaged(rm4_16S_taxa,"rm4")
+d_rm1=get_time_derivative_invaded(rm1_16S_taxa,"rm1",0.2)
+d_rm2=get_time_derivative_invaded(rm2_16S_taxa,"rm2",0.2)
+d_rm3=get_time_derivative_invaded(rm3_16S_taxa,"rm3",0.2)
+d_rm4=get_time_derivative_invaded(rm4_16S_taxa,"rm4",0.2)
 
 
 ##get the time evolving eigenspace ###
