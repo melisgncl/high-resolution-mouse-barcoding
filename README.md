@@ -1,5 +1,6 @@
 # high-resolution-mouse-barcoding       
 This is the accompanying data and source code for the following manuscript under submission: 
+
 Invading species diversity leads to transient gut community interactions
 
 Melis Gencel,1,2 Gisela Marrero Cofino3, Cang Hui4, Zahra Sahaf,1,2, Louis Gauthier1,2, Derek Tsang5, Dana Philpott5, Sheela Ramathan6, Alfredo Menendez3, Shimon Bershtein7, Adrian W.R. Serohijos1,2,*
