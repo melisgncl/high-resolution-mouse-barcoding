@@ -3,4 +3,8 @@ This folder contains the files for the composition of clonal clusters. The data 
 
 Center: Shows the putative barcode sequence.\
 Clonal Cluster ID: Displays the theoretical clonal cluster ID.\
-Remaining Columns: Indicate the time points with their respective counts or frequencies.
+Remaining Columns: Indicate the time points with their respective counts or frequencies.\
+
+##Folder: clonal_cluster_loess
+
+This folder contains the moving averages of clonal clusters, calculated using the LOESS (Locally Estimated Scatterplot Smoothing) method
